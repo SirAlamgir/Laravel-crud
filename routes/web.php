@@ -20,3 +20,4 @@ Route::get('/menu', [Frontend::class , 'menu']);
 // CRUD
 Route::get( '/student' , [studentController::class , 'index'] )->name('student.form');
 Route::post( '/student/create' , [studentController::class , 'store'] )->name('student.store');
+Route::get( '/student/Dashboard' , [ studentController::class , 'studentView' ] )->name('student.Dashboard');

@@ -17,6 +17,20 @@ class studentController extends Controller
             'email' => $request->email
         ]);
 
-        return redirect()->route('student.form');
+        return redirect()->route('student.Dashboard');
     }
+
+    // read operation
+    public function studentView(){
+        $students = Student::all();
+        return view('Crud.Dashboard' , compact('students'));
+
+        // get by id
+        // $students = Student::find(2);
+        // dd( $students );
+        // get by name
+        // $students = Student::where('name','nimra')->get();
+        // dd( $students );
+    }
+
 }
